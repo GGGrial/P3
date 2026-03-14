@@ -1,0 +1,43 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.14/schema.json",
+	"linter": {
+		"rules": {
+			"nursery": {
+				"useSortedClasses": {
+					"level": "warn",
+					"options": {
+						"attributes": ["classList"],
+						"functions": ["clsx", "cva", "tw", "tw.*"]
+					}
+				}
+			}
+		}
+	},
+	"assist": {
+		"enabled": false
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 120,
+		"indentWidth": 2,
+		"bracketSpacing": true,
+		"formatWithErrors": true
+	},
+	"html": {
+		"formatter": {
+			"enabled": true,
+			"indentWidth": 2,
+			"indentScriptAndStyle": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "double",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "asNeeded",
+			"trailingCommas": "none"
+		}
+	}
+}
