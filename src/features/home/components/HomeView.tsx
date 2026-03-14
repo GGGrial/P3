@@ -2,6 +2,9 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import Carousel from '@/components/interactive/Carousel'
+import StatsGrid from '@/components/interactive/StatsGrid'
+import VREntryCard from '@/components/interactive/VREntryCard'
 
 const highlights = [
 	{
@@ -23,6 +26,19 @@ const sections = [
 	{ label: '航母展示', description: '一号/二号/三号航母专题' },
 	{ label: '装备展示', description: '装甲车与微模型展区' },
 	{ label: '装配流程', description: '拼接与调试流程展示' }
+]
+
+const stats = [
+	{ label: '展馆规模', value: '6+1', helper: '六馆一展示区' },
+	{ label: '拼接车间', value: '3', helper: '三大车间' },
+	{ label: '航母专题', value: '3', helper: '一/二/三号' },
+	{ label: '核心价值', value: '3', helper: '存储/教育/装配' }
+]
+
+const carouselItems = [
+	{ title: '航母专题展馆', description: '三大航母数字化成果与装配流程展示。' },
+	{ title: '装备微模型', description: '装甲车与关键装备组件的细节展示。' },
+	{ title: '拼接车间', description: '线上拼接与调试流程的验证示意。' }
 ]
 
 export default function HomeView() {
@@ -117,6 +133,16 @@ export default function HomeView() {
 						<h3 className="text-lg font-semibold">跨团队协作</h3>
 						<p className="mt-2 text-sm text-muted-foreground">二维/三维/VR/网页团队协同推进，保障进度。</p>
 					</Card>
+				</div>
+			</section>
+
+			<section className="px-6 pb-20">
+				<div className="mx-auto flex max-w-6xl flex-col gap-6">
+					<StatsGrid items={stats} />
+					<div className="grid gap-6 md:grid-cols-[1.4fr_0.8fr]">
+						<Carousel items={carouselItems} />
+						<VREntryCard />
+					</div>
 				</div>
 			</section>
 		</div>
