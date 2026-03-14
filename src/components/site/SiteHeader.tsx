@@ -4,10 +4,36 @@ import { cn } from '@/lib/utils'
 import { siteNavigation } from '@/config/navigation'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { useRef } from 'react'
+import { ScrollTrigger } from 'gsap/all'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function SiteHeader() {
+	const headerRef = useRef<HTMLElement | null>(null)
+
+	useGSAP(() => {
+		ScrollTrigger.create({
+			trigger: headerRef.current,
+			start: -80,
+			onEnter: () => {
+				console.log('enter')
+				headerRef.current?.classList.add('border-b')
+			},
+			onLeaveBack: () => {
+				console.log('leave')
+				headerRef.current?.classList.remove('border-b')
+			}
+		})
+	})
+
 	return (
-		<header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
+		<header
+			className="sticky top-0 z-40 border-border/60 bg-background/80 backdrop-blur transition-[border]"
+			ref={headerRef}
+		>
 			<div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
 				<Link to="/" className="text-lg font-semibold tracking-wide text-foreground">
 					军事兵工厂虚拟展馆

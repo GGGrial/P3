@@ -1,10 +1,6 @@
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import Carousel from '@/components/interactive/Carousel'
-import StatsGrid from '@/components/interactive/StatsGrid'
-import VREntryCard from '@/components/interactive/VREntryCard'
 
 const highlights = [
 	{
@@ -28,48 +24,21 @@ const sections = [
 	{ label: '装配流程', description: '拼接与调试流程展示' }
 ]
 
-const stats = [
-	{ label: '展馆规模', value: '6+1', helper: '六馆一展示区' },
-	{ label: '拼接车间', value: '3', helper: '三大车间' },
-	{ label: '航母专题', value: '3', helper: '一/二/三号' },
-	{ label: '核心价值', value: '3', helper: '存储/教育/装配' }
-]
-
-const carouselItems = [
-	{ title: '航母专题展馆', description: '三大航母数字化成果与装配流程展示。' },
-	{ title: '装备微模型', description: '装甲车与关键装备组件的细节展示。' },
-	{ title: '拼接车间', description: '线上拼接与调试流程的验证示意。' }
-]
-
 export default function HomeView() {
 	return (
 		<div>
-			<section className="relative overflow-hidden px-6 pb-16 pt-20">
-				<div className="mx-auto flex max-w-6xl flex-col gap-10">
-					<div className="space-y-6">
-						<Badge variant="secondary" className="uppercase tracking-[0.2em]">
-							虚拟三维展馆计划
-						</Badge>
-						<h1 className="text-balance text-4xl font-semibold leading-tight md:text-5xl">
-							军事兵工厂线上虚拟三维展馆
-						</h1>
-						<p className="max-w-2xl text-base text-muted-foreground md:text-lg">
-							以数字化存储、线上教育与虚拟装配为核心，构建高可信度的军工文化展示与实践平台。
-						</p>
-						<div className="flex flex-wrap gap-3">
-							<Button size="lg">进入VR展馆</Button>
-							<Button size="lg" variant="outline">
-								查看展馆导览
-							</Button>
-						</div>
-					</div>
-					<div className="grid gap-4 md:grid-cols-3">
-						{highlights.map(item => (
-							<Card key={item.title} className="border-border/60 bg-background/60 p-5">
-								<h3 className="text-lg font-semibold">{item.title}</h3>
-								<p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-							</Card>
-						))}
+			<section className="relative overflow-hidden">
+				<div className="flex flex-col items-center h-screen pt-50 gap-4">
+					<h1 className="text-balance text-4xl font-semibold leading-tight md:text-5xl">军事兵工厂线上虚拟三维展馆</h1>
+
+					<p className="max-w-2xl text-base text-muted-foreground md:text-lg text-center">
+						数字存储、线上教育与虚拟装配为核心，构建高可信度的军工文化展示与实践平台
+					</p>
+					<div className="flex flex-wrap gap-4 justify-center mt-5">
+						<Button size="lg">进入VR展馆</Button>
+						<Button size="lg" variant="outline">
+							查看展馆导览
+						</Button>
 					</div>
 				</div>
 			</section>
@@ -133,16 +102,6 @@ export default function HomeView() {
 						<h3 className="text-lg font-semibold">跨团队协作</h3>
 						<p className="mt-2 text-sm text-muted-foreground">二维/三维/VR/网页团队协同推进，保障进度。</p>
 					</Card>
-				</div>
-			</section>
-
-			<section className="px-6 pb-20">
-				<div className="mx-auto flex max-w-6xl flex-col gap-6">
-					<StatsGrid items={stats} />
-					<div className="grid gap-6 md:grid-cols-[1.4fr_0.8fr]">
-						<Carousel items={carouselItems} />
-						<VREntryCard />
-					</div>
 				</div>
 			</section>
 		</div>

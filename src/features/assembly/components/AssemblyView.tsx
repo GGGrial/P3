@@ -1,7 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import Timeline from '@/components/interactive/Timeline'
 
 const workflowSteps = [
 	{
@@ -42,7 +41,15 @@ export default function AssemblyView() {
 							通过线上虚拟装配与调试，验证装配逻辑与工艺路径，减少线下成本与风险。
 						</p>
 					</div>
-					<Timeline items={workflowSteps} />
+					<div className="grid gap-4 md:grid-cols-2">
+						{workflowSteps.map(item => (
+							<Card key={item.step} className="border-border/60 bg-background/70 p-5">
+								<p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">步骤 {item.step}</p>
+								<h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+								<p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+							</Card>
+						))}
+					</div>
 				</div>
 			</section>
 
