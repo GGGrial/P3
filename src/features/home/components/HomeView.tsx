@@ -143,9 +143,11 @@ export default function HomeView() {
 						<h2 className="text-3xl font-semibold">
 							<BlurReveal inView>展馆结构一览</BlurReveal>
 						</h2>
-						<p className="text-muted-foreground">
-							<BlurReveal inView>6个展馆与1个展示区，覆盖航母、装备、零部件、装配流程与研学展示。</BlurReveal>
-						</p>
+
+						<BlurReveal inView className="text-muted-foreground">
+							6个展馆与1个展示区，覆盖航母、装备、零部件、装配流程与研学展示。
+						</BlurReveal>
+
 						<AnimatedContent duration={1} distance={150}>
 							<div className="grid gap-3">
 								{sections.map(section => (
@@ -239,9 +241,11 @@ export default function HomeView() {
 						<h1 className="text-4xl font-semibold text-primary-foreground">
 							<BlurReveal inView>装备与微模型展区</BlurReveal>
 						</h1>
-						<p className="max-w-3xl text-base text-muted-foreground md:text-lg">
-							<BlurReveal inView>聚焦装甲车辆、舰载设备与零部件器材，构建可视化与可交互的装备资料库。</BlurReveal>
-						</p>
+
+						<BlurReveal className="max-w-3xl text-base text-muted-foreground md:text-lg" inView>
+							聚焦装甲车辆、舰载设备与零部件器材，构建可视化与可交互的装备资料库。
+						</BlurReveal>
+
 						<AnimatedContent duration={1} distance={150}>
 							<div className="flex flex-wrap gap-3">
 								<Button size="lg" variant="outline">
@@ -295,11 +299,9 @@ export default function HomeView() {
 						<h1 className="text-4xl font-semibold">
 							<BlurReveal inView>航母专题展馆</BlurReveal>
 						</h1>
-						<p className="max-w-3xl text-base text-muted-foreground md:text-lg">
-							<BlurReveal inView>
-								聚焦航母一号、二号、三号三大专题展馆，展示模型细节、装配流程与关键技术亮点。
-							</BlurReveal>
-						</p>
+						<BlurReveal inView className="max-w-3xl text-base text-muted-foreground md:text-lg">
+							聚焦航母一号、二号、三号三大专题展馆，展示模型细节、装配流程与关键技术亮点。
+						</BlurReveal>
 						<AnimatedContent duration={1} distance={150}>
 							<div className="flex flex-wrap gap-3">
 								<Button size="lg">进入航母展馆</Button>
@@ -336,9 +338,10 @@ export default function HomeView() {
 						<h1 className="text-4xl font-semibold">
 							<BlurReveal inView>线上拼接与调试流程</BlurReveal>
 						</h1>
-						<p className="max-w-3xl text-base text-muted-foreground md:text-lg">
-							<BlurReveal inView>通过线上虚拟装配与调试，验证装配逻辑与工艺路径，减少线下成本与风险。</BlurReveal>
-						</p>
+
+						<BlurReveal className="max-w-3xl text-base text-muted-foreground md:text-lg" inView>
+							通过线上虚拟装配与调试，验证装配逻辑与工艺路径，减少线下成本与风险。
+						</BlurReveal>
 					</div>
 					<AnimatedContent duration={1} distance={150}>
 						<div className="grid gap-4 md:grid-cols-2">
@@ -355,8 +358,6 @@ export default function HomeView() {
 			</section>
 
 			<Separator />
-
-			<section className="h-[200vh]"></section>
 		</div>
 	)
 }
